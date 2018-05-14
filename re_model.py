@@ -18,8 +18,6 @@ import torch.nn.functional as F
 import pdb
 import datetime as dt
 
-from data_util import load_mnist
-
 cudaFlag = 'cuda'
 
 def build_model(input_dim, output_dim):
@@ -137,14 +135,6 @@ class Random_Effects_Loss(nn.Module):
 # def main():
 torch.manual_seed(1)
 
-### MNIST
-# n_classes = 10
-# trX, teX, trY, teY = load_mnist(onehot=False)
-# trX = Variable(torch.from_numpy(trX).float()).cuda()
-# teX = Variable(torch.from_numpy(teX).float()).cuda()
-# trY = Variable(torch.from_numpy(trY).long()).cuda()
-# trYwide = Variable(torch.FloatTensor(trY.size()[0], n_classes)).zero_().cuda().\
-#     scatter_(1,trY.unsqueeze(1),1)
 
 ### Coin flips
 # n_classes = 1
